@@ -1,0 +1,15 @@
+class Solution {
+public:
+    int countHillValley(vector<int>& nums) {
+        int hills=0;
+        int left=nums[0];
+        for(int i=1;i<nums.size();i++){
+            if(nums[i]==nums[i+1]) continue;
+            if((left<nums[i] && nums[i]>nums[i+1]) || (left>nums[i] && nums[i]<nums[i+1])){
+                hills++;
+                left=nums[i];
+            }
+        }
+        return hills;
+    }
+};
