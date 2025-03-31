@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int maxPower(string s) {
+        int n=s.size();
+        int count=1;
+        int result=1;
+        for(int i=0;i<n;i++){
+            count=1;
+            while(i<n-1 && s[i+1]==s[i]){
+                count++;
+                i++;
+            }
+            if(result<count){
+                result=count;
+            }
+        }
+        return result;
+    }
+};
