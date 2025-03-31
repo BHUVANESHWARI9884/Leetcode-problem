@@ -1,0 +1,18 @@
+class Solution {
+public:
+    int minimumChairs(string s) {
+      int chair=0,maxchair=0;
+      for(char x:s){
+        if(x=='E'){
+            chair++;
+        }
+        else{
+             chair--;
+        }
+        if(chair>maxchair){
+            maxchair=chair;
+        }
+      }
+      return maxchair;
+    }
+};
