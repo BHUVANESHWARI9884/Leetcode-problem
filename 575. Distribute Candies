@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int distributeCandies(vector<int>& candyType) {
+        int n=candyType.size();
+        int ans=n/2;
+         map<int, int> mp;         
+        for(int i : candyType) {
+            mp[i]++;             
+        }
+        
+        int avail = mp.size();     
+        if(avail < ans) {         
+            return avail;        
+        }
+        return ans;
+    }
+};
