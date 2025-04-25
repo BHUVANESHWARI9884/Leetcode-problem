@@ -1,0 +1,21 @@
+class Solution {
+  public:
+    string reverse(const string& S) {
+        // code here
+        stack<char>ans;
+        int n=S.size();
+        int i=0;
+        while(i<n){
+            ans.push(S[i]);
+            i++;
+        }
+         
+        string reversed = S;
+        for (int i = 0; i < n; i++) {
+            reversed[i] = ans.top();
+            ans.pop();
+        }
+        
+        return reversed;
+    }
+};
